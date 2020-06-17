@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border-color: #ccc;
+        }
+
+        .tg td {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: #ccc;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .tg th {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 10px 5px;
+            border-style: solid;
+            border-width: 1px;
+            overflow: hidden;
+            word-break: normal;
+            border-color: #ccc;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+        .tg .tg-4eph {
+            background-color: #f9f9f9
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>User Details</h1>
+
+<table class="tg">
+    <tr>
+        <th width="80">ID</th>
+        <th width="140">Name</th>
+        <th width="140">Email</th>
+        <th width="140">Phone number</th>
+        <th width="60">Edit</th>
+        <th width="60">Delete</th>
+    </tr>
+    <tr>
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.number}"></td>
+        <td> <button><a th:href="@{user-update/{id}(id=${user.id})}">Edit</a></button></td>
+        <td><button><a th:href="@{user-remove/{id}(id=${user.id})}">Delete</a></button></td>
+    </tr>
+</table>
+</body>
+</html>
